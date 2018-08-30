@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">language Detection</string>
+    <string name="enter_text_hint">Enter your text.</string>
+    <string name="error">Error</string>
+</resources>
