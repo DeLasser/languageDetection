@@ -14,9 +14,6 @@ interface LanguageDao {
     fun insertDetectedText(detectedText: DetectedText)
 
     @Query("SELECT * FROM DetectedText")
-    fun getObservableTextList() : LiveData<DetectedText>
-
-    @Query("SELECT * FROM DetectedText WHERE text = :text")
-    fun getDetectedText(text: String) : DetectedText
+    fun getObservableTextList(): LiveData<List<DetectedText>>
 
 }

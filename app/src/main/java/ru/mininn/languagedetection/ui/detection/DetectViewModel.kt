@@ -11,12 +11,14 @@ import ru.mininn.languagedetection.data.model.DetectionHolder
 
 class DetectViewModel(application: Application) : AndroidViewModel(application) {
     val languageRepository = LanguageRepository(application.applicationContext)
+    var isResultShown = true
 
-    var  detectedTextLiveData = MutableLiveData<DetectionHolder>()
-    var disposable : Disposable? = null
+    var detectedTextLiveData = MutableLiveData<DetectionHolder>()
+    var disposable: Disposable? = null
 
 
     fun detectLanguage(text: String) {
+        isResultShown = false
         disposable?.dispose()
         disposable = languageRepository.getDetectedText(text)
                 .subscribeOn(Schedulers.io())
